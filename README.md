@@ -4,3 +4,8 @@ Open AI DALLE
 Wolfram Aplha
 Slack WebHooks:
 Websockets:
+
+
+Logs-> Azzure Insights
+Local file logs stored
+logback.xml
