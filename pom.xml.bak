@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-parent</artifactId>
+		<version>2.6.8</version>
+		<relativePath /> <!-- lookup parent from repository -->
+	</parent>
+	<groupId>com.etech7</groupId>
+	<artifactId>etech7-chatGpt-service-1</artifactId>
+	<version>0.1.3-SNAPSHOT</version>
+	<name>etech7-chatGpt-service-1</name>
+	<description>Demo project for Spring Boot</description>
+	<properties>
+		<java.version>1.8</java.version>
+		<log4j2.version>2.17.1</log4j2.version>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+
+	</properties>
+	<dependencies>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-web</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-autoconfigure</artifactId>
+			<version>2.6.8</version>
+		</dependency>
+		<dependency>
+			<groupId>com.github.seratch</groupId>
+			<artifactId>jslack</artifactId>
+			<version>1.5.6</version>
+		</dependency>
+		<!-- <dependency> <groupId>com.azure.spring</groupId> <artifactId>spring-cloud-azure-starter</artifactId> 
+			</dependency> <dependency> <groupId>com.azure.spring</groupId> <artifactId>spring-cloud-azure-starter-active-directory</artifactId> 
+			</dependency> <dependency> <groupId>com.azure.spring</groupId> <artifactId>spring-cloud-azure-starter-keyvault</artifactId> 
+			</dependency> <dependency> <groupId>com.azure.spring</groupId> <artifactId>spring-cloud-azure-starter-storage</artifactId> 
+			</dependency> -->
+		<!-- <dependency> <groupId>com.azure.spring</groupId> <artifactId>spring-cloud-azure-starter-active-directory</artifactId> 
+			</dependency> <dependency> <groupId>org.springframework.boot</groupId> <artifactId>spring-boot-starter-oauth2-client</artifactId> 
+			</dependency> -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-devtools</artifactId>
+			<scope>runtime</scope>
+			<optional>true</optional>
+		</dependency>
+		<dependency>
+			<groupId>com.microsoft.azure</groupId>
+			<artifactId>applicationinsights-spring-boot-starter</artifactId>
+			<version>2.6.2</version>
+		</dependency>
+		<dependency>
+			<groupId>com.microsoft.azure</groupId>
+			<artifactId>applicationinsights-core</artifactId>
+			<version>3.4.7</version>
+		</dependency>
+		<!-- <dependency> <groupId>com.microsoft.azure</groupId> <artifactId>applicationinsights-runtime-attach</artifactId> 
+			<version>3.4.9</version> </dependency> -->
+		<dependency>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+			<optional>true</optional>
+		</dependency>
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>javax.servlet-api</artifactId>
+			<version>4.0.1</version>
+		</dependency>
+		<!-- <dependency> <groupId>com.slack.api</groupId> <artifactId>bolt-servlet</artifactId> 
+			<version>1.27.3</version> </dependency> <dependency> <groupId>com.slack.api</groupId> 
+			<artifactId>bolt-jakarta-servlet</artifactId> <version>1.27.2</version> </dependency> 
+			<dependency> <groupId>com.slack.api</groupId> <artifactId>bolt</artifactId> 
+			<version>1.27.2</version> </dependency> -->
+		<dependency>
+			<groupId>com.microsoft.azure</groupId>
+			<artifactId>applicationinsights-logging-logback</artifactId>
+			<version>2.6.2</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-test</artifactId>
+			<scope>test</scope>
+		</dependency>
+	</dependencies>
+	<!-- <dependencyManagement> <dependencies> <dependency> <groupId>com.azure.spring</groupId> 
+		<artifactId>spring-cloud-azure-dependencies</artifactId> <version>4.6.0</version> 
+		<type>pom</type> <scope>import</scope> </dependency> </dependencies> </dependencyManagement> -->
+	<build>
+		<plugins>
+			<!-- <plugin> <groupId>org.apache.maven.plugins</groupId> <artifactId>maven-source-plugin</artifactId> 
+				<version>2.2.1</version> <executions> <execution> <id>attach-sources</id> 
+				<goals> <goal>jar-no-fork</goal> </goals> </execution> </executions> </plugin> -->
+			<plugin>
+				<groupId>com.microsoft.azure</groupId>
+				<artifactId>azure-webapp-maven-plugin</artifactId>
+				<version>1.7.0</version>
+				<configuration>
+					<schemaVersion>V2</schemaVersion>
+					<resourceGroup>etech7-chatGpt-service</resourceGroup>
+					<appName>etech7-service</appName>
+					<pricingTier>P1v2</pricingTier>
+					<region>westeurope</region>
+					<appSettings>
+						<property>
+							<name>JAVA_OPTS</name>
+							<valiue>-Dserver.port=80</valiue>
+						</property>
+					</appSettings>
+					<runtime>
+						<os>linux</os>
+						<javaVersion>jre8</javaVersion>
+						<webContainer>jre8</webContainer>
+					</runtime>
+					<deployment>
+						<resources>
+							<resource>
+								<directory>${project.basedir}/target</directory>
+								<includes>
+									<include>*.jar</include>
+								</includes>
+							</resource>
+						</resources>
+					</deployment>
+					<deploymentSlot>
+						<name>etech7-service-slot</name>
+						<configurationSource>etech7</configurationSource>
+					</deploymentSlot>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-javadoc-plugin</artifactId>
+				<version>2.9.1</version>
+				<executions>
+					<execution>
+						<id>attach-javadocs</id>
+						<goals>
+							<goal>jar</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+
+
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+				<configuration>
+					<excludes>
+						<exclude>
+							<groupId>org.projectlombok</groupId>
+							<artifactId>lombok</artifactId>
+						</exclude>
+					</excludes>
+				</configuration>
+			</plugin>
+
+
+			<!-- <plugin> <groupId>org.springframework.boot</groupId> <artifactId>spring-boot-maven-plugin</artifactId> 
+				<configuration> <mainClass>com.chatGpt</mainClass> </configuration> <executions> 
+				<execution> <goals> <goal>repackage</goal> </goals> </execution> </executions> 
+				</plugin> -->
+			<!-- <plugin> <groupId>org.apache.maven.plugins</groupId> <artifactId>maven-gpg-plugin</artifactId> 
+				<version>1.5</version> <executions> <execution> <id>sign-artifacts</id> <phase>verify</phase> 
+				<goals> <goal>sign</goal> </goals> </execution> </executions> </plugin> -->
+		</plugins>
+	</build>
+</project>
+<!-- <dependencyManagement> <dependencies> <dependency> <groupId>com.azure.spring</groupId> 
+	<artifactId>spring-cloud-azure-dependencies</artifactId> <version>${spring-cloud-azure.version}</version> 
+	<type>pom</type> <scope>import</scope> </dependency> </dependencies> </dependencyManagement> 
+	<build> <plugins> <plugin> <groupId>org.springframework.boot</groupId> <artifactId>spring-boot-maven-plugin</artifactId> 
+	<configuration> <excludes> <exclude> <groupId>org.projectlombok</groupId> 
+	<artifactId>lombok</artifactId> </exclude> </excludes> </configuration> </plugin> 
+	</plugins> </build> </project> -->

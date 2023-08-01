@@ -1,0 +1,3 @@
+2023-06-29 15:59:26,050 INFO com.chatGpt.Etech7ChatGptService1ApplicationTests [main] Starting Etech7ChatGptService1ApplicationTests using Java 17.0.3 on GOGIA with PID 3356 (started by adity in C:\Users\adity\Documents\workspace-spring-tool-suite-4-4.15.2.RELEASE\etech7-chatGpt-service-1)
+2023-06-29 15:59:26,078 INFO com.chatGpt.Etech7ChatGptService1ApplicationTests [main] No active profile set, falling back to 1 default profile: "default"
+2023-06-29 15:59:27,980 INFO com.chatGpt.Etech7ChatGptService1ApplicationTests [main] Started Etech7ChatGptService1ApplicationTests in 2.524 seconds (JVM running for 3.462)

@@ -1,0 +1,16 @@
+2023-06-28 13:38:19,851 INFO com.chatGpt.Etech7ChatGptService1ApplicationTests [main] Starting Etech7ChatGptService1ApplicationTests using Java 17.0.3 on GOGIA with PID 15720 (started by adity in C:\Users\adity\Documents\workspace-spring-tool-suite-4-4.15.2.RELEASE\etech7-chatGpt-service-1)
+2023-06-28 13:38:19,874 INFO com.chatGpt.Etech7ChatGptService1ApplicationTests [main] No active profile set, falling back to 1 default profile: "default"
+2023-06-28 13:38:21,248 INFO com.chatGpt.Etech7ChatGptService1ApplicationTests [main] Started Etech7ChatGptService1ApplicationTests in 1.961 seconds (JVM running for 2.829)
+2023-06-28 14:54:29,031 INFO com.chatGpt.Etech7ChatGptService1Application [restartedMain] Starting Etech7ChatGptService1Application using Java 17.0.3 on GOGIA with PID 18448 (C:\Users\adity\Documents\workspace-spring-tool-suite-4-4.15.2.RELEASE\etech7-chatGpt-service-1\target\classes started by adity in C:\Users\adity\Documents\workspace-spring-tool-suite-4-4.15.2.RELEASE\etech7-chatGpt-service-1)
+2023-06-28 14:54:29,046 INFO com.chatGpt.Etech7ChatGptService1Application [restartedMain] No active profile set, falling back to 1 default profile: "default"
+2023-06-28 14:54:29,081 INFO org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor [restartedMain] Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2023-06-28 14:54:29,081 INFO org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor [restartedMain] For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2023-06-28 14:54:29,719 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [restartedMain] Tomcat initialized with port(s): 8071 (http)
+2023-06-28 14:54:29,726 INFO org.apache.catalina.core.StandardService [restartedMain] Starting service [Tomcat]
+2023-06-28 14:54:29,726 INFO org.apache.catalina.core.StandardEngine [restartedMain] Starting Servlet engine: [Apache Tomcat/9.0.63]
+2023-06-28 14:54:29,789 INFO org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] [restartedMain] Initializing Spring embedded WebApplicationContext
+2023-06-28 14:54:29,790 INFO org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext [restartedMain] Root WebApplicationContext: initialization completed in 708 ms
+2023-06-28 14:54:30,110 INFO org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer [restartedMain] LiveReload server is running on port 35729
+2023-06-28 14:54:30,156 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [restartedMain] Tomcat started on port(s): 8071 (http) with context path ''
+2023-06-28 14:54:30,163 INFO com.chatGpt.Etech7ChatGptService1Application [restartedMain] Started Etech7ChatGptService1Application in 1.614 seconds (JVM running for 2.255)
+2023-06-28 14:54:31,896 INFO org.springframework.boot.admin.SpringApplicationAdminMXBeanRegistrar$SpringApplicationAdmin [RMI TCP Connection(7)-127.0.0.1] Application shutdown requested.
