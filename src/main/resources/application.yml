@@ -6,18 +6,11 @@ server:
       charset: UTF-8
       force: true
 chatgpt:
-  api-key: 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
-  #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 --> 3.5 turbo
-  #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
-  #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
-  #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
-  #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
-  #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   # https://beta.openai.com/docs/quickstart/adjust-your-settings
+  api-key: 
   max-tokens: 1000
 wa:
-  appid:4WXX6T-XY5UXV8RTQ
+  appid:
 dbsUrl:
-  https://etech7-wf-etech7-db-service.azuremicroservices.io/
 #spring:
 #  cloud:
 #    azure:
@@ -42,7 +35,7 @@ logging:
     file: "%d %-5level [%thread] %logger : %msg%n"
 azure:
   application-insights:
-    instrumentation-key: 0fbdefac-4b5b-4a1d-aeb9-af7711ff32f3
+    instrumentation-key:
     enabled: true
     web:
       enabled: true
@@ -50,6 +43,4 @@ azure:
       level:
         root: info
 slack:
-  webhook: https://hooks.slack.com/services/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
-  #https://hooks.slack.com/services/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
-#  https://hooks.slack.com/services/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
+  webhook:
